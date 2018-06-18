@@ -1,18 +1,17 @@
 
 package main.scala
 
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkConf
+
+import org.apache.spark.sql.SparkSession
 
 object ScalaRunner  {
 
   def main(args: Array[String]) {
 
-
-    val conf = new SparkConf().
-      setAppName("TEST").
-      setMaster("local[2]")
-    val sc = new SparkContext(conf)
+     val Spark = SparkSession.builder()
+       .master("local")
+       .appName("test")
+       .getOrCreate()
 
 
 
